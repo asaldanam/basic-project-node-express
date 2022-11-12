@@ -12,7 +12,7 @@ var configServer = require('./config_server_express/pipeline_middlewares');
 //#region --------------------- configuración SERVIDOR WEB EXPRESS ---------------------
 configServer(serverExpress);
 
-serverExpress.listen(3000); // Puerto por el que escucha la aplicación servidor
+serverExpress.listen(3001); // Puerto por el que escucha la aplicación servidor
 //#endregion
 
 //#region --------------------- configuración CONEXIÓN A MONGODB SERVER ---------------------

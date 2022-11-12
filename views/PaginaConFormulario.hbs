@@ -1,0 +1,54 @@
+<div>
+
+  {{!-- DEBUG --}}
+  <small>Esto es lo primero que deberíamos pintar en la vista, antes de ponernos a hacer otra cosa:</small>
+  <pre>{{debug}}</pre>
+  <small>
+    Con esto sabemos exactamente que variables tenemos accesibles y hemos pasado al "viewData" del controlador:
+    Luego podremos borrarlo, aunque recomiendo dejarlo comentado para poder hacer uso de él siempre que queramos.
+  </small>
+  <hr>
+  {{!-- DEBUG --}}
+
+
+
+
+
+
+  <h1>{{titulo}}</h1>
+  <h2>{{subtitulo}}</h2>
+
+  {{!-- Queremos que este formulario llame a "POST /PaginaConFormulario" y le pase 3 campos --}}
+  <form method="POST" action="/PaginaConFormulario">
+    <p>
+      <label for="entrenador">Nombre del entrenador</label>
+      <input name="entrenador" id="entrenador" type="text" required>
+    </p>
+    
+    <p>
+      <label for="pokemon">Pokemon inscrito</label>
+      <select name="pokemon" id="pokemon" required>
+        {{!-- Si ponemos la primera opción con `value="" selected disabled` podemos hacer un "placeholder" --}}
+        <option value="" selected disabled>Selecciona una opción</option>
+
+        {{!-- Iteramos sobre cada pokemon --}}
+        {{#each pokemonList as |pokemon|}}
+          <option value="{{pokemon}}">{{pokemon}}</option>
+        {{/each}}
+
+        {{!-- Podemos meter opciones adicionales "a fuego" que queramos: --}}
+        <option value="sin-pokemon">No tengo pokemon</option>
+      </select>
+    </p>
+
+    <p>
+      <input name="privacidad" id="privacidad" type="checkbox"/>
+      <label for="privacidad">Acepto la política de privacidad</label>
+    </p>
+
+    <p>
+      <button type="reset">Reset</button>
+      <button type="submit">Dar de alta</button>
+    </p>
+  </form>
+</div>

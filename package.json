@@ -11,6 +11,7 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "mongoose": "^6.6.5",
+    "node-fetch": "^2.6.7",
     "node-mailjet": "^5.1.1",
     "nodemon": "^2.0.20"
   }
